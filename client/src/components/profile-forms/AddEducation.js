@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addEducation } from "../../actions/profile";
@@ -104,9 +104,9 @@ const AddEducation = ({ addEducation, history }) => {
           ></textarea>
         </div>
         <input type="submit" class="btn btn-primary my-1" />
-        <Link class="btn btn-light my-1" href="dashboard.html">
+        <a class="btn btn-light my-1" href="dashboard.html">
           Go Back
-        </Link>
+        </a>
       </form>
     </Fragment>
   );
@@ -116,4 +116,4 @@ AddEducation.propTypes = {
   addEducation: PropTypes.func.isRequired,
 };
 
-export default connect(null, { addEducation })(AddEducation);
+export default connect(null, { addEducation })(withRouter(AddEducation));
