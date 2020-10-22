@@ -6,8 +6,8 @@ import { login } from "../../actions/auth";
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
-    name: "",
     email: "",
+    password: "",
   });
 
   const { email, password } = formData;
@@ -30,14 +30,14 @@ const Login = ({ login, isAuthenticated }) => {
       <p className="lead">
         <i className="fas fa-user"></i> Sign Into Your Account
       </p>
-      <form className="form" onSubmit={(e) => onSubmit(e)}>
+      <form className="form" onSubmit={onSubmit}>
         <div className="form-group">
           <input
             type="email"
             placeholder="Email Address"
             name="email"
             value={email}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             required
           />
         </div>
@@ -47,7 +47,7 @@ const Login = ({ login, isAuthenticated }) => {
             placeholder="Password"
             name="password"
             value={password}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             minLength="6"
           />
         </div>
